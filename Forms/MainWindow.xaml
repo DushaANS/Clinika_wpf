@@ -1,0 +1,39 @@
+﻿<Window x:Class="AnsWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AndersonWPF"
+        xmlns:Controls="clr"
+        mc:Ignorable="d"
+        Title="Список личных дел" Height="700" Width="900" Background="White" FontSize="18">
+    <Grid RenderTransformOrigin="0.493,0.523" Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="8*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <ScrollViewer x:Name="Scroll_clients" Grid.Column="0" Background="#FF484848" VerticalScrollBarVisibility="Hidden" PreviewMouseWheel="Scroll_clients_PreviewMouseWheel">
+            <WrapPanel x:Name="Clients" />
+        </ScrollViewer>
+        <ComboBox x:Name="Gender" Grid.Column="1" HorizontalAlignment="Left" Margin="10,9,0,0" VerticalAlignment="Top" Width="120" Height="20" SelectionChanged="Gender_SelectionChanged" FontSize="12">
+            <ComboBoxItem Content="All" IsSelected="True"/>
+            <ComboBoxItem Content="M" />
+            <ComboBoxItem Content="Ж" />
+        </ComboBox>
+        <TextBox x:Name="Search_fio" Grid.Column="1" HorizontalAlignment="Left" Height="20" Margin="10,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="Search_TextChanged" FontSize="12"/>
+        <TextBox x:Name="Search_email" Grid.Column="1" HorizontalAlignment="Left" Height="20" Margin="10,59,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="Search_email_TextChanged" FontSize="12"/>
+        <TextBox x:Name="Search_number" Grid.Column="1" HorizontalAlignment="Left" Height="20" Margin="10,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="Search_number_TextChanged" FontSize="12"/>
+        <Label x:Name="number" Content="Телефон" Grid.Column="1" HorizontalAlignment="Left" Margin="130,82,0,0" VerticalAlignment="Top" Height="24" FontSize="12"/>
+        <Label x:Name="email" Content="Email" Grid.Column="1" HorizontalAlignment="Left" Margin="133,56,0,0" VerticalAlignment="Top" Height="26" Width="50" FontSize="12"/>
+        <Label x:Name="fio" Content="ФИО&#xD;&#xA;" Grid.Column="1" HorizontalAlignment="Left" Margin="133,32,0,0" VerticalAlignment="Top" Height="24" FontSize="12"/>
+        <CheckBox x:Name="Check_berthday" Content="ДР в этом месяце" Grid.Column="1" HorizontalAlignment="Left" Margin="10,110,0,0" VerticalAlignment="Top" Width="206" Height="24" Checked="Check_berthday_Checked" Unchecked="Check_berthday_Unchecked" FontSize="12"/>
+        <Button Content="Добавить" Grid.Column="1" HorizontalAlignment="Left" Margin="10,166,0,0" VerticalAlignment="Top" Width="120" Click="Button_Click" FontSize="12"/>
+        <ComboBox x:Name="Klient_count" Grid.Column="1" HorizontalAlignment="Left" Margin="10,139,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="Klient_count_SelectionChanged" FontSize="12">
+            <ComboBoxItem Content="Все" IsSelected="True"/>
+            <ComboBoxItem Content="10"/>
+            <ComboBoxItem Content="50"/>
+            <ComboBoxItem Content="200"/>
+        </ComboBox>
+
+    </Grid>
+</Window>

@@ -1,0 +1,1 @@
+@"Data Source = k1-204-teacher,49172; Initial Catalog = Rahimov_dem; User Id = Kost; Password = 123; Integrated Security = true;"

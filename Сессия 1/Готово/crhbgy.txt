@@ -1,0 +1,13 @@
+USE [Shabaltin_D]
+GO
+
+INSERT INTO [dbo].[ClientService]
+           ([ClientID]
+		   ,[StartTime]
+           ,[ServiceID])
+		   SELECT        Client.ID, Sheet1$.[Начало оказания услуги],  Service.ID AS Expr1
+FROM            Client cross JOIN
+                         Service CROSS JOIN
+                         Sheet1$ where Sheet1$.[Клиент]=Client.LastName and Sheet1$.[Услуга]=Service.Title
+
+GO
